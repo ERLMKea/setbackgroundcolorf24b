@@ -20,6 +20,18 @@ console.log(inpColorPicker);
 const pTags = document.getElementsByTagName('p')
 console.log(pTags);
 
+const pTagArr = Array.from(pTags);
+let pTagFontSize = 8;
+
+const pbIncFontSize = document.getElementById("pbIncreaseFont");
+
+function increaseFontTags() {
+    pTagFontSize++;
+    pTagArr.forEach(tag => tag.style.fontSize = pTagFontSize + "px");
+
+}
+pbIncFontSize.addEventListener("click", increaseFontTags);
+
 function setBackgroundColor() {
     let col = inp.value;
     console.log(col);
